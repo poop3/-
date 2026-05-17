@@ -1,0 +1,33 @@
+d = []
+for n in range(1, 1001):
+    b = bin(n)[2:]
+    s = b.count('1')
+    if s%2==0:
+        b = b + '10'
+    else:
+        b = '1' + b + '00'
+    R = int(b, 2)
+    if R>107:
+        d.append(n)
+print(min(d))
+
+
+def tr(n):
+    s = ''
+    while n>0:
+        ost = n%3
+        s = str(ost) + s
+        n = n//3
+    return s
+d = []
+for n in range(1, 1001):
+    b = tr(n)
+    if n%3!= 0:
+        b = '1' + b + b[-3:]
+    else:
+        s = (b.count('1') + b.count('2') *2)*8
+        b = b + tr(s)
+    R = int(b, 3)
+    if 1000<=R<=1400:
+        d.append(R)
+print(sorted(d))
