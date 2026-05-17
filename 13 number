@@ -1,0 +1,13 @@
+a = [int(x) for x in open('13.txt')]
+b = []
+for x in a:
+    if abs(x)%9!=0:
+        b.append(x)
+m = min(b)
+c = []
+for i in range(len(a) - 1):
+    x = a[i]
+    y = a[i+1]
+    if x%m==0 and y%m==0:
+        c.append(x+y)
+print(len(c), max(c))
