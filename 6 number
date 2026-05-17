@@ -1,0 +1,10 @@
+from itertools import product
+a = product(sorted('ВЕСНА'), repeat = 4)
+d = []
+k = 0
+for i in a:
+    s = ''.join(i)
+    k+=1
+    if s.count('Е') == 0 and s.count('АА')==0:
+        d.append([k, s])
+print(d[0])
